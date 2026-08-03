@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import fotImg from '../assets/fot.jpg';
 import smkImg from '../assets/smk.jpeg';
 
 const About = () => {
+  const [isFotColor, setIsFotColor] = useState(false);
+  const [isSmkColor, setIsSmkColor] = useState(false);
+  const fotRef = useRef(null);
+  const smkRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === fotRef.current) {
+            setIsFotColor(entry.isIntersecting);
+          } else if (entry.target === smkRef.current) {
+            setIsSmkColor(entry.isIntersecting);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (fotRef.current) observer.observe(fotRef.current);
+    if (smkRef.current) observer.observe(smkRef.current);
+
+    return () => {
+      if (fotRef.current) observer.unobserve(fotRef.current);
+      if (smkRef.current) observer.unobserve(smkRef.current);
+    };
+  }, []);
+
   return (
     <section id="about" className="py-20 px-8 md:px-24 lg:px-48 bg-slate-900">
       
@@ -43,7 +71,7 @@ const About = () => {
           <div className="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
             <div className="w-full max-w-sm aspect-[4/3] bg-slate-800 rounded-lg border-2 border-teal-400/50 flex items-center justify-center relative group overflow-hidden shadow-xl shadow-teal-900/20">
               <span className="w-full h-full z-0 relative">
-                 <img src={fotImg} alt="D3 Manajemen Informatika" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                 <img ref={fotRef} src={fotImg} alt="D3 Manajemen Informatika" className={`w-full h-full object-cover transition-all duration-500 ${isFotColor ? 'grayscale-0' : 'grayscale'}`} />
               </span>
             </div>
           </div>
@@ -55,7 +83,7 @@ const About = () => {
           <div className="w-full md:w-1/2 order-1 md:order-1 flex justify-center">
             <div className="w-full max-w-sm aspect-[4/3] bg-slate-800 rounded-lg border-2 border-teal-400/50 flex items-center justify-center relative group overflow-hidden shadow-xl shadow-teal-900/20">
               <span className="w-full h-full z-0 relative">
-                <img src={smkImg} alt="Masa SMK" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                <img ref={smkRef} src={smkImg} alt="Masa SMK" className={`w-full h-full object-cover transition-all duration-500 ${isSmkColor ? 'grayscale-0' : 'grayscale'}`} />
               </span>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { portfolioData } from '../data/portfolioData';
 import profilImg from '../assets/profil.jpeg'; 
 
@@ -6,6 +6,8 @@ const Hero = () => {
   const { name, role, description, contact } = portfolioData.profile;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [isPhotoColor, setIsPhotoColor] = useState(false);
+  const photoRef = useRef(null);
 
   const emailAddress = "dwir57017@gmail.com"; 
 
@@ -14,6 +16,23 @@ const Hero = () => {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsPhotoColor(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    if (photoRef.current) {
+      observer.observe(photoRef.current);
+    }
+
+    return () => {
+      if (photoRef.current) observer.unobserve(photoRef.current);
+    };
+  }, []);
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-6 sm:px-8 md:px-24 lg:px-48 bg-slate-900 pt-28 md:pt-20 relative">
@@ -45,7 +64,12 @@ const Hero = () => {
 
         <div className="order-1 md:order-2 flex justify-center relative">
           <div className="w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 bg-slate-800 rounded-full md:rounded-lg border-2 border-teal-400 overflow-hidden flex items-center justify-center shadow-2xl mt-4 md:mt-0">
-            <img src={profilImg} alt="Profil" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            <img 
+              ref={photoRef} 
+              src={profilImg} 
+              alt="Profil" 
+              className={`w-full h-full object-cover transition-all duration-500 ${isPhotoColor ? 'grayscale-0' : 'grayscale'}`} 
+            />
           </div>
         </div>
       </div>
