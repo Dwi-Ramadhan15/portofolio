@@ -4,8 +4,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 px-6 sm:px-8 md:px-24 lg:px-48 bg-slate-900 border-t border-slate-800">
       <div className="flex items-center gap-4 mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-100">
-          <span className="text-teal-400 font-mono text-2xl mr-2">02.</span> 
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-100"> 
           Pengalaman & Keahlian
         </h2>
         <div className="h-px bg-slate-700 flex-grow rounded"></div>
