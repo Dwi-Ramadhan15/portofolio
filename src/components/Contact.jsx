@@ -17,11 +17,11 @@ const Contact = () => {
         </p>
         
         <a 
-          href={contact.email} 
-          className="inline-block px-8 py-4 bg-transparent border-2 border-teal-400 text-teal-400 rounded-lg hover:bg-teal-400 hover:text-slate-900 transition-all duration-300 font-mono text-lg"
-        >
-          Kirim Pesan
-        </a>
+            href="mailto:dwir57017@gmail.com" 
+            className="px-8 py-4 border-2 border-teal-400 text-teal-400 rounded hover:bg-teal-400/10 transition-all duration-300 font-bold"
+            >
+            Kirim Pesan
+            </a>
       </div>
     </section>
   );
