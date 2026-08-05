@@ -47,7 +47,7 @@ const About = () => {
           
           <div className="w-full md:w-1/2 order-2 md:order-1">
             <h3 className="text-2xl font-bold text-slate-200 mb-4">
-              <span className="text-teal-400">D3 Manajemen Informatika</span>
+              <span className="text-amber-400">D3 Manajemen Informatika</span>
             </h3>
             <p className="text-slate-400 leading-relaxed text-lg text-justify">
               Lulusan D3 Manajemen Informatika Politeknik Negeri Lampung dengan IPK 3,71. Memiliki
@@ -69,7 +69,7 @@ const About = () => {
           </div>
           
           <div className="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
-            <div className="w-full max-w-sm aspect-[4/3] bg-slate-800 rounded-lg border-2 border-teal-400/50 flex items-center justify-center relative group overflow-hidden shadow-xl shadow-teal-900/20">
+            <div className="w-full max-w-sm aspect-[4/3] bg-slate-800 rounded-lg border-2 border-amber-400/50 flex items-center justify-center relative group overflow-hidden shadow-xl shadow-amber-900/20">
               <span className="w-full h-full z-0 relative">
                  <img ref={fotRef} src={fotImg} alt="D3 Manajemen Informatika" className={`w-full h-full object-cover transition-all duration-500 ${isFotColor ? 'grayscale-0' : 'grayscale'}`} />
               </span>
@@ -81,7 +81,7 @@ const About = () => {
         <div className="flex flex-col md:flex-row items-center gap-10">
           
           <div className="w-full md:w-1/2 order-1 md:order-1 flex justify-center">
-            <div className="w-full max-w-sm aspect-[4/3] bg-slate-800 rounded-lg border-2 border-teal-400/50 flex items-center justify-center relative group overflow-hidden shadow-xl shadow-teal-900/20">
+            <div className="w-full max-w-sm aspect-[4/3] bg-slate-800 rounded-lg border-2 border-amber-400/50 flex items-center justify-center relative group overflow-hidden shadow-xl shadow-amber-900/20">
               <span className="w-full h-full z-0 relative">
                 <img ref={smkRef} src={smkImg} alt="Masa SMK" className={`w-full h-full object-cover transition-all duration-500 ${isSmkColor ? 'grayscale-0' : 'grayscale'}`} />
               </span>
@@ -90,7 +90,7 @@ const About = () => {
           
           <div className="w-full md:w-1/2 order-2 md:order-2">
             <h3 className="text-2xl font-bold text-slate-200 mb-4">
-              <span className="text-teal-400">SMK Negeri Tanjung Sari</span>
+              <span className="text-amber-400">SMK Negeri Tanjung Sari</span>
             </h3>
             <p className="text-slate-400 leading-relaxed text-lg text-justify">
               Lulusan SMK Negeri Tanjung Sari jurusan Teknik Komputer dan Jaringan, dengan pengalaman

@@ -15,10 +15,10 @@ const Experience = () => {
         <div>
           <h3 className="text-2xl font-bold text-slate-200 mb-8">Pengalaman Kerja</h3>
           
-          <div className="mb-10 relative pl-6 border-l-2 border-teal-400">
-            <div className="absolute w-4 h-4 bg-slate-900 border-2 border-teal-400 rounded-full -left-[9px] top-1"></div>
+          <div className="mb-10 relative pl-6 border-l-2 border-amber-400">
+            <div className="absolute w-4 h-4 bg-slate-900 border-2 border-amber-400 rounded-full -left-[9px] top-1"></div>
             <h4 className="text-xl font-bold text-slate-100">Backend Developer (Intern)</h4>
-            <p className="text-teal-400 font-mono text-sm mb-3">PT Microdata Indonesia | Feb 2026 - Jun 2026</p>
+            <p className="text-amber-400 font-mono text-sm mb-3">PT Microdata Indonesia | Feb 2026 - Jun 2026</p>
             <ul className="text-slate-400 text-sm md:text-base list-disc list-inside space-y-2 text-justify">
               <li>Merancang dan mengembangkan RESTful API yang efisien menggunakan Node.js dan Express.js.</li>
               <li>Mendesain basis data PostgreSQL untuk mendukung fitur pencarian dan peta interaktif.</li>
@@ -26,10 +26,10 @@ const Experience = () => {
             </ul>
           </div>
 
-          <div className="relative pl-6 border-l-2 border-teal-400">
-            <div className="absolute w-4 h-4 bg-slate-900 border-2 border-teal-400 rounded-full -left-[9px] top-1"></div>
+          <div className="relative pl-6 border-l-2 border-amber-400">
+            <div className="absolute w-4 h-4 bg-slate-900 border-2 border-amber-400 rounded-full -left-[9px] top-1"></div>
             <h4 className="text-xl font-bold text-slate-100">Teknisi Jaringan & Komputer (Intern)</h4>
-            <p className="text-teal-400 font-mono text-sm mb-3">Zaicomtecht Computer | Jan 2021 - Mei 2021</p>
+            <p className="text-amber-400 font-mono text-sm mb-3">Zaicomtecht Computer | Jan 2021 - Mei 2021</p>
             <ul className="text-slate-400 text-sm md:text-base list-disc list-inside space-y-2 text-justify">
               <li>Melakukan instalasi jaringan LAN dan konfigurasi router.</li>
               <li>Melaksanakan perakitan, perawatan, dan troubleshooting hardware serta software komputer.</li>
@@ -44,7 +44,7 @@ const Experience = () => {
             <h4 className="text-lg font-bold text-slate-300 mb-3">Hard Skills</h4>
             <div className="flex flex-wrap gap-2">
               {['Node.js', 'Express.js', 'React.js', 'PHP', 'PostgreSQL', 'MySQL', 'Git/GitHub', 'Networking'].map((skill, index) => (
-                <span key={index} className="px-3 py-1 bg-teal-400/10 text-teal-300 border border-teal-400/20 rounded font-mono text-sm">
+                <span key={index} className="px-3 py-1 bg-amber-400/10 text-amber-300 border border-amber-400/20 rounded font-mono text-sm">
                   {skill}
                 </span>
               ))}
