@@ -31,9 +31,17 @@ const Header = () => {
           </div>
         </div>
 
-        <button className="lg:hidden text-amber-400 text-2xl" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? '✕' : '☰'}
-        </button>
+        <div className="flex lg:hidden items-center gap-5">
+          <div className="relative w-8 h-8 flex items-center justify-center opacity-80">
+            <div className="absolute w-full h-full border border-amber-400/20 rounded-full animate-[spin_4s_linear_infinite] border-t-amber-400 border-r-amber-400"></div>
+            <div className="absolute w-5 h-5 border border-amber-400/20 rounded-full animate-[spin_3s_linear_infinite_reverse] border-b-amber-400 border-l-amber-400"></div>
+            <div className="absolute w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse"></div>
+          </div>
+          <button className="text-amber-400 text-2xl" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? '✕' : '☰'}
+          </button>
+        </div>
+
       </div>
 
       {isOpen && (
